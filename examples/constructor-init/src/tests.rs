@@ -57,14 +57,15 @@ mod constructed {
     }
 
     #[test]
-    #[should_panic]
     fn test_constructor_registry_set_value_rejects_unauthorized_caller() {
         // No mock_all_auths here: a random caller must be rejected.
         let env = Env::default();
         let admin = Address::generate(&env);
         let contract_id = env.register(ConstructorRegistry, (&admin, 7_u32));
         let client = ConstructorRegistryClient::new(&env, &contract_id);
-        client.set_value(&8);
+
+        assert!(client.try_set_value(&8).is_err());
+        assert_eq!(client.value(), 7);
     }
 
     // Note: there is intentionally no `initialize` on ConstructorRegistry.
