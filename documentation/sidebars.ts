@@ -54,6 +54,7 @@ const sidebars: SidebarsConfig = {
         'concepts/custom-accounts',
         'concepts/authorization-trees',
         'concepts/events',
+        'concepts/bytes-and-hashes',
         'concepts/time-and-scheduling',
         'concepts/gas-and-resources',
         'concepts/simulation-and-footprints',

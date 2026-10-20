@@ -148,6 +148,11 @@
       "minInternalLinks": 2,
       "requiredLinks": ["/docs/concepts/storage"]
     },
+    "concepts/bytes-and-hashes": {
+      "category": "concepts",
+      "minInternalLinks": 2,
+      "requiredLinks": ["/docs/patterns/htlc-swap", "/docs/patterns/custom-types"]
+    },
     "concepts/gas-and-resources": {
       "category": "concepts",
       "minInternalLinks": 2,

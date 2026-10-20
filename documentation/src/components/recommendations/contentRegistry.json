@@ -139,6 +139,19 @@
     "href": "/docs/concepts/best-practices"
   },
   {
+    "id": "concepts/bytes-and-hashes",
+    "title": "Bytes, BytesN, and Hashes",
+    "description": "Choose the right Soroban byte type and convert hashes without length or encoding errors.",
+    "category": "concepts",
+    "difficulty": "beginner",
+    "status": "stable",
+    "time": 10,
+    "tags": [
+      "errors"
+    ],
+    "href": "/docs/concepts/bytes-and-hashes"
+  },
+  {
     "id": "concepts/constructors",
     "title": "Constructors and Initialization",
     "description": "Learn when Soroban uses a deploy-time __constructor and when a contract should expose a guarded initialize method instead.",
