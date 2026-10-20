@@ -40,6 +40,7 @@ members = [
     "sac-client",
     "simple-dao",
     "simple-voting",
+    "single-range-clmm",
     "soulbound-token",
     "staking",
     "storage-ttl",
