@@ -38,6 +38,15 @@ This repository **does not currently include** a `rust-toolchain` or `rust-toolc
 
 These commands are the same idea on every OS. Follow the OS guide for package managers and PATH details.
 
+## Keys and network safety
+
+Installing the tools is safe. The risk starts the moment you add an identity, point at an RPC endpoint, or deploy:
+
+- **Do not commit or paste secrets.** Keep `S…` secret keys and seed phrases out of source files, commits, pull requests, issues, screenshots, and shell history. Prefer named identities (`stellar keys generate <name> --secure-store`) or a wallet extension such as Freighter — commands reference the identity *name*, not the key itself.
+- **Testnet first, mainnet last.** Testnet XLM is free and disposable; mainnet is permanent, costs real XLM, and has no undo. Public or third-party RPC endpoints are a convenience, not a substitute for careful key handling and an operational runbook.
+
+See [API Security](./api-security.md) for keeping secrets out of frontends, and [Deploy to Mainnet](./deploy-mainnet.md) for the full pre-deploy checklist.
+
 ### 1. Install Rust
 
 ```bash
