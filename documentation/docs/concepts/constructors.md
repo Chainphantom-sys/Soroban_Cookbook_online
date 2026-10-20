@@ -14,6 +14,16 @@ Soroban contracts can perform setup at deploy time with `__constructor`, and the
 - Use a guarded `initialize` method when setup must happen after deployment or through a factory pattern.
 - Treat any one-time setup as a security boundary: prevent repeated calls and verify the caller is authorized.
 
+:::caution Key handling and network risk
+Constructor arguments are supplied at deployment, which means you will be signing a transaction — often with a real key over a real network. Before you deploy or sign anything:
+
+- **Never commit, paste, or share secret keys or seed phrases.** Do not put them in source files, test fixtures, `.env` files, shell history, chat, screenshots, or issue reports. Prefer a named identity (for example `stellar keys generate --global <alias>` and `--source-account <alias>`) or a wallet extension (for example Freighter) so the secret never leaves the signer.
+- **Treat testnet and mainnet differently.** Testnet is for experimentation; mainnet moves real funds and is effectively irreversible. Confirm the network passphrase and the contract IDs before signing, and prefer an explicit `--network testnet` over relying on a default.
+- **RPC and public endpoints are not a substitute for careful ops.** A public RPC endpoint can be rate-limited, logged, or run by an untrusted operator; it does not validate your intent. Use your own or a trusted RPC provider for anything touching real value, and do not send secrets or API tokens through an endpoint you do not control.
+
+See [API Security](../getting-started/api-security.md) and [Deploy to Mainnet](../getting-started/deploy-mainnet.md) for the canonical checklists. The rules above stand on their own.
+:::
+
 ## Deploy-time setup with `__constructor`
 
 A Soroban `__constructor` runs when the contract is registered and instantiated. It is the closest thing to a traditional constructor in other smart contract ecosystems. It is ideal for values that must exist as soon as the contract is live.
